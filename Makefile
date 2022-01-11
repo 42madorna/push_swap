@@ -20,7 +20,7 @@ all: $(NAME)
 %.o: %.c
 	$(CC) $(FLAGS) -c $< -o $@
 
-$(NAME): $(OBJS) $(LIBFT)
+$(NAME): $(LIBFT) $(OBJS) 
 	$(CC) $(FLAGS) $(SRCS) -Iincludes $(INCL) -o $(NAME) $(LIBFT)
 
 $(LIBFT):

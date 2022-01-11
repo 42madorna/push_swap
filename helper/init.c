@@ -6,7 +6,7 @@
 /*   By: agaliste <agaliste@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/22 21:18:20 by agaliste          #+#    #+#             */
-/*   Updated: 2022/01/11 19:01:01 by agaliste         ###   ########.fr       */
+/*   Updated: 2022/01/11 19:31:01 by agaliste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,17 +37,17 @@ void	parse(char **str)
 	}
 }
 
-int add(int **n, int newnum, int arrsize)
+int	add(int **n, int newnum, int arrsize)
 {
-    int *temp;
+	int	*temp;
 
 	++arrsize;
-    temp=ft_realloc(*n, (arrsize+1) * sizeof(int));
-    if(temp==NULL)
+	temp = ft_realloc(*n, (arrsize + 1) * sizeof(int));
+	if (temp == NULL)
 		reterror("Error in realloc!");
-    *n=temp;
-    (*n)[arrsize]=newnum;
-    printf("Added %d \n", (*n)[arrsize]);
+	*n = temp;
+	(*n)[arrsize] = newnum;
+	printf("Added %d \n", (*n)[arrsize]);
 	return (arrsize);
 }
 
@@ -58,8 +58,8 @@ int	*savenumbers(int argc, char **argv)
 	int		j;
 	int		*nums;
 	int		size;
-	
-	size = 0;
+
+	size = -1;
 	nums = malloc(sizeof(int));
 	ft_bzero(nums, 1);
 	i = 1;
@@ -71,7 +71,7 @@ int	*savenumbers(int argc, char **argv)
 			size = add(&nums, ft_atoi(str[j++]), size);
 		ft_free_matrix(str);
 	}
-	return(nums);
+	return (nums);
 }
 
 void	init(char **argv, int argc)
