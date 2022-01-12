@@ -6,13 +6,35 @@
 /*   By: agaliste <agaliste@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/22 21:18:20 by agaliste          #+#    #+#             */
-/*   Updated: 2022/01/11 19:31:01 by agaliste         ###   ########.fr       */
+/*   Updated: 2022/01/12 17:23:32 by agaliste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../pushswp.h"
 
-void	parse(char **str)
+static inline int
+	checkdupp(int *nums, int size)
+{
+	int	i;
+	int	j;
+
+	i = 0;
+	while (i <= size)
+	{
+		j = i + 1;
+		while (j <= size)
+		{
+			if (nums[i] == nums[j])
+				return (1);
+			j++;
+		}
+		i++;
+	}
+	return (0);
+}
+
+static inline void
+	parse(char **str)
 {
 	int	i;
 	int	j;
@@ -37,21 +59,22 @@ void	parse(char **str)
 	}
 }
 
-int	add(int **n, int newnum, int arrsize)
+static inline void
+	add(int **n, int newnum, int *arrsize)
 {
 	int	*temp;
 
-	++arrsize;
-	temp = ft_realloc(*n, (arrsize + 1) * sizeof(int));
+	++*arrsize;
+	temp = ft_realloc(*n, (*arrsize + 1) * sizeof(int));
 	if (temp == NULL)
 		reterror("Error in realloc!");
 	*n = temp;
-	(*n)[arrsize] = newnum;
-	printf("Added %d \n", (*n)[arrsize]);
-	return (arrsize);
+	(*n)[*arrsize] = newnum;
+	printf("Added %d \n", (*n)[*arrsize]);
 }
 
-int	*savenumbers(int argc, char **argv)
+int
+	*savenumbers(int argc, char **argv)
 {
 	char	**str;
 	int		i;
@@ -68,13 +91,16 @@ int	*savenumbers(int argc, char **argv)
 		str = ft_split((argv[i++]), ' ');
 		j = 0;
 		while (str[j])
-			size = add(&nums, ft_atoi(str[j++]), size);
+			add(&nums, ft_atoi(str[j++]), &size);
 		ft_free_matrix(str);
 	}
+	if (checkdupp(nums, size))
+		reterror("There are duplicates");
 	return (nums);
 }
 
-void	init(char **argv, int argc)
+void
+	init(char **argv, int argc)
 {
 	char	**str;
 	int		i;

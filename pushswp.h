@@ -6,7 +6,7 @@
 /*   By: agaliste <agaliste@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/11 18:54:52 by agaliste          #+#    #+#             */
-/*   Updated: 2022/01/11 19:00:44 by agaliste         ###   ########.fr       */
+/*   Updated: 2022/01/12 17:18:45 by agaliste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ int		*savenumbers(int argc, char **argv);
 ** Checker Functions
 */
 
-int		checkdupp(int *nums);
+int		checkdupp(int *nums, int size);
 
 /*
 ** Solver Functions
