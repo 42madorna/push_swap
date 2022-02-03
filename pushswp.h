@@ -6,7 +6,7 @@
 /*   By: agaliste <agaliste@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/11 18:54:52 by agaliste          #+#    #+#             */
-/*   Updated: 2022/01/12 17:18:45 by agaliste         ###   ########.fr       */
+/*   Updated: 2022/02/03 10:58:41 by agaliste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,6 @@ void	push(t_list	**src, t_list	**dst);
 ** Helper Functions
 */
 
-void	parse(char **str);
 void	init(char **argv, int argc);
 int		ifsimbols(char c, char a);
 void	reterror(char *error);
@@ -38,7 +37,6 @@ int		*savenumbers(int argc, char **argv);
 ** Checker Functions
 */
 
-int		checkdupp(int *nums, int size);
 
 /*
 ** Solver Functions
