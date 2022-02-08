@@ -3,6 +3,8 @@ NAME = push_swap
 SRCS =	helper/init.c \
 		helper/tools.c \
 		helper/checks.c \
+		functions/operations.c \
+		functions/operations2.c \
 		push_swap.c
 
 FLAGS = -Wall -Wextra -Werror

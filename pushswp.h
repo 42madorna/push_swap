@@ -6,7 +6,7 @@
 /*   By: agaliste <agaliste@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/11 18:54:52 by agaliste          #+#    #+#             */
-/*   Updated: 2022/02/08 18:00:25 by agaliste         ###   ########.fr       */
+/*   Updated: 2022/02/08 18:46:43 by agaliste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,9 @@
 /*
 ** Operator Functions
 */
+void	sx(int **stack, char *stackname);
+void	ss(int **stack_a, int **stack_b);
 
-void	rotate(t_list	**lst, int size);
-void	swap(t_list	**lst);
-void	push(t_list	**src, t_list	**dst);
 
 /*
 ** Helper Functions
@@ -36,7 +35,7 @@ void	reterror(char *error);
 ** Checker Functions
 */
 
-int	issorted(int *stack, int len);
+int		issorted(int *stack, int len);
 
 /*
 ** Solver Functions
