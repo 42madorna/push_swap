@@ -6,7 +6,7 @@
 /*   By: agaliste <agaliste@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/22 21:18:20 by agaliste          #+#    #+#             */
-/*   Updated: 2022/01/12 17:23:32 by agaliste         ###   ########.fr       */
+/*   Updated: 2022/02/08 17:35:37 by agaliste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,10 @@ static inline int
 	int	j;
 
 	i = 0;
-	while (i <= size)
+	while (i < size)
 	{
 		j = i + 1;
-		while (j <= size)
+		while (j < size)
 		{
 			if (nums[i] == nums[j])
 				return (1);
@@ -59,63 +59,63 @@ static inline void
 	}
 }
 
-static inline void
-	add(int **n, int newnum, int *arrsize)
+static inline int
+	*savenumbers(char ***str, int len)
 {
-	int	*temp;
-
-	++*arrsize;
-	temp = ft_realloc(*n, (*arrsize + 1) * sizeof(int));
-	if (temp == NULL)
-		reterror("Error in realloc!");
-	*n = temp;
-	(*n)[*arrsize] = newnum;
-	printf("Added %d \n", (*n)[*arrsize]);
-}
-
-int
-	*savenumbers(int argc, char **argv)
-{
-	char	**str;
 	int		i;
-	int		j;
 	int		*nums;
-	int		size;
 
-	size = -1;
-	nums = malloc(sizeof(int));
-	ft_bzero(nums, 1);
-	i = 1;
-	while (i < argc)
+	nums = malloc(sizeof(int) * len);
+	i = 0;
+	while (i < len)
 	{
-		str = ft_split((argv[i++]), ' ');
-		j = 0;
-		while (str[j])
-			add(&nums, ft_atoi(str[j++]), &size);
-		ft_free_matrix(str);
+		nums[i] = ft_atoi((*str)[i]);
+		i++;
 	}
-	if (checkdupp(nums, size))
+	ft_free_matrix((*str));
+	if (checkdupp(nums, len))
 		reterror("There are duplicates");
 	return (nums);
 }
 
-void
-	init(char **argv, int argc)
+static inline void
+	penetratethematrix(char ***str, char **spl, int **indx)
 {
+	int	x;
+
+	if (!*spl)
+		return ;
+	x = 0;
+	while (spl[x])
+	{
+		(*str)[**indx] = ft_strdup(spl[x]);
+		(*str) = (char **) ft_realloc(*str, sizeof(char *) * ft_strlen(spl[x]) + 1);
+		(**indx)++;
+		x++;
+	}
+}
+
+int
+	*init(char **argv, int argc, int *len)
+{
+	char	**spl;
 	char	**str;
 	int		i;
 
 	i = 1;
+	str = ft_calloc(1, sizeof(char *) * 13212231);
 	if (argv[i] && argc > 1)
 	{
 		while (argv[i])
 		{
-			str = ft_split((argv[i]), ' ');
-			parse(str);
-			ft_free_matrix(str);
+			spl = ft_split((argv[i]), ' ');
+			parse(spl);
+			penetratethematrix(&str, spl, &len);
+			ft_free_matrix(spl);
 			i++;
 		}
 	}
 	else
 		reterror("No args");
+	return (savenumbers(&str, *len));
 }

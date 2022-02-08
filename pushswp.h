@@ -6,7 +6,7 @@
 /*   By: agaliste <agaliste@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/11 18:54:52 by agaliste          #+#    #+#             */
-/*   Updated: 2022/02/03 10:58:41 by agaliste         ###   ########.fr       */
+/*   Updated: 2022/02/08 17:24:12 by agaliste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,15 +28,13 @@ void	push(t_list	**src, t_list	**dst);
 ** Helper Functions
 */
 
-void	init(char **argv, int argc);
+int		*init(char **argv, int argc, int *len);
 int		ifsimbols(char c, char a);
 void	reterror(char *error);
-int		*savenumbers(int argc, char **argv);
 
 /*
 ** Checker Functions
 */
-
 
 /*
 ** Solver Functions
