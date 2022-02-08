@@ -6,7 +6,7 @@
 /*   By: agaliste <agaliste@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/22 21:18:20 by agaliste          #+#    #+#             */
-/*   Updated: 2022/02/08 17:35:37 by agaliste         ###   ########.fr       */
+/*   Updated: 2022/02/08 18:07:10 by agaliste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,7 +89,7 @@ static inline void
 	while (spl[x])
 	{
 		(*str)[**indx] = ft_strdup(spl[x]);
-		(*str) = (char **) ft_realloc(*str, sizeof(char *) * ft_strlen(spl[x]) + 1);
+		(*str) = (char **) ft_realloc(*str, sizeof(char *) * 13);
 		(**indx)++;
 		x++;
 	}

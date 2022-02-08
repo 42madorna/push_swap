@@ -6,7 +6,7 @@
 /*   By: agaliste <agaliste@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/11 18:54:52 by agaliste          #+#    #+#             */
-/*   Updated: 2022/02/08 17:24:12 by agaliste         ###   ########.fr       */
+/*   Updated: 2022/02/08 18:00:25 by agaliste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,8 @@ void	reterror(char *error);
 /*
 ** Checker Functions
 */
+
+int	issorted(int *stack, int len);
 
 /*
 ** Solver Functions
