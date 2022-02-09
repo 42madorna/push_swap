@@ -6,7 +6,7 @@
 /*   By: agaliste <agaliste@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/22 21:28:04 by agaliste          #+#    #+#             */
-/*   Updated: 2022/02/09 11:05:28 by agaliste         ###   ########.fr       */
+/*   Updated: 2022/02/09 12:37:30 by agaliste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ void
 	i = -1;
 	while (i++ < len)
 		copy[i] = stack_a[i];
-	copy = insertion_short(copy, len);
+	copy = insertion_sort(copy, len);
 	i = -1;
 	while (++i <= len)
 	{

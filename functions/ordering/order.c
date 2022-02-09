@@ -6,14 +6,14 @@
 /*   By: agaliste <agaliste@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/09 09:40:24 by agaliste          #+#    #+#             */
-/*   Updated: 2022/02/09 11:06:08 by agaliste         ###   ########.fr       */
+/*   Updated: 2022/02/09 12:36:58 by agaliste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../headers/pushswp.h"
 
 int
-	*insertion_short(int *array, int len)
+	*insertion_sort(int *array, int len)
 {
 	int	i;
 	int	j;

@@ -6,7 +6,7 @@
 /*   By: agaliste <agaliste@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/11 18:54:52 by agaliste          #+#    #+#             */
-/*   Updated: 2022/02/09 11:06:17 by agaliste         ###   ########.fr       */
+/*   Updated: 2022/02/09 12:37:08 by agaliste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,6 @@ int		issorted(int *stack, int len);
 ** Solver Functions
 */
 
-int		*insertion_short(int *array, int len);
+int		*insertion_sort(int *array, int len);
 
 #endif
