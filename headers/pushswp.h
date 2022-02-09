@@ -6,7 +6,7 @@
 /*   By: agaliste <agaliste@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/11 18:54:52 by agaliste          #+#    #+#             */
-/*   Updated: 2022/02/09 12:37:08 by agaliste         ###   ########.fr       */
+/*   Updated: 2022/02/09 19:10:38 by agaliste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,11 @@
 /*
 ** Operator Functions
 */
+
 void	sx(int *stack, char *stackname);
 void	ss(int *stack_a, int *stack_b);
-
+void	px(int *stack_src, int *stack_dst, char *stackname);
+int		*insertion_sort(int *array, int len);
 
 /*
 ** Helper Functions
@@ -42,6 +44,6 @@ int		issorted(int *stack, int len);
 ** Solver Functions
 */
 
-int		*insertion_sort(int *array, int len);
+
 
 #endif

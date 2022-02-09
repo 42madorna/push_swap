@@ -6,7 +6,7 @@
 /*   By: agaliste <agaliste@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/07 03:15:47 by agaliste          #+#    #+#             */
-/*   Updated: 2022/02/09 11:06:04 by agaliste         ###   ########.fr       */
+/*   Updated: 2022/02/09 19:26:29 by agaliste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,4 +35,29 @@ void
 	stack_b[0] = stack_b[1];
 	stack_b[1] = temp;
 	write(1, "ss", 3);
+}
+
+void
+	px(int *stack_src, int *stack_dst, char *stackname)
+{
+	int i;
+
+	i = 0;
+	if (!stack_src[0])
+		return ;
+	while(stack_dst[i])
+		i++;
+	while(i > 0)
+	{
+		stack_dst[i] = stack_dst[i - 1];
+		i--;
+	}
+	i = 0;
+	while(i < intmatrixlen(stack_src) - 1)
+	{
+		stack_src[i] = stack_src[i + 1];
+		i++;
+	}
+	stack_src[i - 1] = 0;
+	write(1, stackname, 3);
 }

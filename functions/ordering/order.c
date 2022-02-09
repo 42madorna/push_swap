@@ -6,7 +6,7 @@
 /*   By: agaliste <agaliste@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/09 09:40:24 by agaliste          #+#    #+#             */
-/*   Updated: 2022/02/09 12:36:58 by agaliste         ###   ########.fr       */
+/*   Updated: 2022/02/09 18:30:01 by agaliste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,3 +34,15 @@ int
 	}
 	return (array);
 }
+
+// void
+// 	small_sort(int *stack_a, int *stack_b, int len)
+// {
+// 	return ;
+// }
+
+// void
+// 	big_sort(int *stack_a, int *stack_b, int len)
+// {
+// 	return ;
+// }
