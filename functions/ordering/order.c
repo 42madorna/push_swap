@@ -1,27 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   operations2.c                                      :+:      :+:    :+:   */
+/*   order.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: agaliste <agaliste@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/08 18:41:49 by agaliste          #+#    #+#             */
-/*   Updated: 2022/02/08 18:46:22 by agaliste         ###   ########.fr       */
+/*   Created: 2022/02/09 09:40:24 by agaliste          #+#    #+#             */
+/*   Updated: 2022/02/09 11:06:08 by agaliste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../pushswp.h"
+#include "../../headers/pushswp.h"
 
-void
-	ss(int **stack_a, int **stack_b)
+int
+	*insertion_short(int *array, int len)
 {
-	int temp;
-	temp = (*stack_a)[0];
-	(*stack_a)[0] = (*stack_a)[1];
-	(*stack_a)[1] = temp;
+	int	i;
+	int	j;
+	int	temp;
 
-	temp = (*stack_b)[0];
-	(*stack_b)[0] = (*stack_b)[1];
-	(*stack_b)[1] = temp;
-	write(1, 'ss', 3);
+	i = 0;
+	while (i < len)
+	{
+		j = i;
+		while (j > 0 && array[j] < array[j - 1])
+		{
+			temp = array[j];
+			array[j] = array[j - 1];
+			array[j - 1] = temp;
+			j--;
+		}
+		i++;
+	}
+	return (array);
 }

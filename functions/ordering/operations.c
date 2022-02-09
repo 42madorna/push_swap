@@ -1,35 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   tools.c                                            :+:      :+:    :+:   */
+/*   operations.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: agaliste <agaliste@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/22 21:28:04 by agaliste          #+#    #+#             */
-/*   Updated: 2022/01/12 17:24:24 by agaliste         ###   ########.fr       */
+/*   Created: 2021/09/07 03:15:47 by agaliste          #+#    #+#             */
+/*   Updated: 2022/02/09 11:06:04 by agaliste         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../pushswp.h"
+#include "../../headers/pushswp.h"
 
 void
-	reterror(char *error)
+	sx(int *stack, char *stackname)
 {
-	write(1, "Error\n", 7);
-	write(1, error, ft_strlen(error));
-	write(1, "\n", 1);
-	exit (0);
+	int	temp;
+
+	temp = stack[0];
+	stack[0] = stack[1];
+	stack[1] = temp;
+	write(1, stackname, 3);
 }
 
-int
-	ifsimbols(char c, char a)
+void
+	ss(int *stack_a, int *stack_b)
 {
-	if (c == '-' || c == '+')
-	{
-		if (a == '-' || a == '+' || !ft_isdigit(a))
-			return (1);
-	}
-	if ((c >= '!' && c <= '*') || c == ',' || (c >= '.' && c <= '/'))
-		return (1);
-	return (0);
+	int	temp;
+
+	temp = stack_a[0];
+	stack_a[0] = stack_a[1];
+	stack_a[1] = temp;
+	temp = stack_b[0];
+	stack_b[0] = stack_b[1];
+	stack_b[1] = temp;
+	write(1, "ss", 3);
 }
